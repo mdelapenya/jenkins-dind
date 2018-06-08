@@ -8,5 +8,5 @@
         "EXECUTORS": "1"
     },
     "dependencies": ["master"],
-    "scale": 4
+    "scale": 16
 }
