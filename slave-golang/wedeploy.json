@@ -1,0 +1,12 @@
+{
+    "id": "golang",
+    "env": {
+        "MASTER": "http://master:8080",
+        "USERNAME": "admin",
+        "PASSWORD": "passw0rd",
+        "LABELS": "golang",
+        "EXECUTORS": "1"
+    },
+    "dependencies": ["master"],
+    "scale": 4
+}
