@@ -4,6 +4,7 @@
         "MASTER": "http://master:8080",
         "USERNAME": "admin",
         "PASSWORD": "passw0rd",
+        "LABELS": "slave",
         "EXECUTORS": "1"
     },
     "dependencies": ["master"],
