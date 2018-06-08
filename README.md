@@ -1,4 +1,4 @@
-[![Deploy](https://cdn.wedeploy.com/images/deploy.svg)](https://console.wedeploy.com/deploy?repo=https://github.com/wedeploy-examples/jenkins-example)
+[![Deploy](https://cdn.wedeploy.com/images/deploy.svg)](https://console.wedeploy.com/deploy?repo=https://github.com/mdelapenya/jenkins-example/tree/jenkins-poc)
 
 # Jenkins
 
