@@ -1,5 +1,5 @@
 {
-    "id": "slave",
+    "id": "java",
     "env": {
         "MASTER": "http://master:8080",
         "USERNAME": "admin",
