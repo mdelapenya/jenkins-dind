@@ -6,5 +6,6 @@
         "PASSWORD": "passw0rd",
         "EXECUTORS": "1"
     },
-    "dependencies": ["master"]
+    "dependencies": ["master"],
+    "scale": 4
 }
