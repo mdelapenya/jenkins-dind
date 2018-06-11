@@ -11,4 +11,8 @@ RUN set -x && \
 ENV JAVA_HOME="/opt/jdk"
 ENV PATH="$JAVA_HOME/bin:$PATH"
 
+RUN mkdir -p /home/jenkins-slave/.gradle
+COPY --chown=jenkins-slave:jenkins-slave gradle.properties /home/jenkins-slave/.gradle/gradle.properties
+RUN chown -R jenkins-slave:jenkins-slave /home/jenkins-slave/.gradle
+
 USER jenkins-slave
