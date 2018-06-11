@@ -1,0 +1,12 @@
+{
+    "id": "nodejs",
+    "env": {
+        "MASTER": "http://master:8080",
+        "USERNAME": "admin",
+        "PASSWORD": "passw0rd",
+        "LABELS": "nodejs",
+        "EXECUTORS": "1"
+    },
+    "dependencies": ["master"],
+    "scale": 8
+}
