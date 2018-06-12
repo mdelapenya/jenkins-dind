@@ -1,14 +1,34 @@
-[![Deploy](https://cdn.wedeploy.com/images/deploy.svg)](https://console.wedeploy.com/deploy?repo=https://github.com/mdelapenya/jenkins-example/tree/jenkins-poc)
+# Jenkins stack
 
-# Jenkins
+This project represents a Jenkins stack with different build node types: one for `golang` projects, other for `java` projects, and another for `nodejs` ones.
 
-An example of [Jenkins](https://hub.docker.com/r/jenkins/jenkins/) on [WeDeploy](https://wedeploy.com/).
+## Jenkins Docker-in-Docker slaves
 
-## Instructions
+There is a [wedeploy-node](./wedeploy-node) directory with the base slave node, which is an aggregation of [the official Docker DinD image](https://github.com/docker-library/docker/tree/master/18.05/dind), plus [Carlos Sanchez's work](https://github.com/carlossg/jenkins-swarm-slave-docker) for a Jenkins slave that self-joins to a Jenkins swarm.
 
-1. Install the [WeDeploy CLI](https://wedeploy.com/docs/intro/using-the-command-line/).
-2. Clone this repository.
-3. Open the project with your command line and run `we deploy -p yourproject`.
+## Testing the stack
+
+Please first use the [build.sh](./build.sh) script to build the images:
+
+### docker-compose
+
+Please use the [build.sh](./build.sh) script:
+
+```shell
+$ ./build.sh build # builds the images
+```
+
+### Docker Swarm
+
+It's not possible to test this stack in Docker Swarm because `--privileged` is not supported. But if you still want to execute the stack in a Swarm, please use the [build.sh](./build.sh) script:
+
+```shell
+$ ./build.sh stack-deploy # starts the swarm stack
+
+$ ./build.sh stack-rm # shuts down the swarm stack
+
+$ ./build.sh stack-update # updates the swarm stack if any image is changed
+```
 
 ## License
 

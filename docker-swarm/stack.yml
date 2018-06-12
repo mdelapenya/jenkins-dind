@@ -1,0 +1,45 @@
+version: '3'
+services:
+  master:
+    image: 'mdelapenya/jenkins:1.0.0'
+    ports:
+      - "8888:8080"
+    volumes:
+      - master-home:/var/jenkins_home
+
+  golang:
+    image: 'mdelapenya/jenkins-slave-golang:1.0.0'
+    deploy:
+      replicas: 2
+    environment:
+      MASTER: 'http://master:8080'
+      USERNAME: 'admin'
+      PASSWORD: 'passw0rd'
+      LABELS: 'golang'
+      EXECUTORS: '1'
+
+  java:
+    image: 'mdelapenya/jenkins-slave-java:1.0.0'
+    deploy:
+      replicas: 2
+    environment:
+      MASTER: 'http://master:8080'
+      USERNAME: 'admin'
+      PASSWORD: 'passw0rd'
+      LABELS: 'java'
+      EXECUTORS: '1'
+    privileged: true
+
+  nodejs:
+    image: 'mdelapenya/jenkins-slave-nodejs:1.0.0'
+    deploy:
+      replicas: 2
+    environment:
+      MASTER: 'http://master:8080'
+      USERNAME: 'admin'
+      PASSWORD: 'passw0rd'
+      LABELS: 'nodejs'
+      EXECUTORS: '1'
+
+volumes:
+  master-home:
