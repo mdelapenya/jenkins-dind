@@ -1,10 +1,3 @@
-FROM csanchez/jenkins-swarm-slave
+FROM mdelapenya/dind-slave:1.0.0
 
-USER root
-
-RUN set -x && \
-    curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
-    apt-get install -y \
-        nodejs build-essential
-
-USER jenkins-slave
+RUN apk add --update nodejs nodejs-npm
